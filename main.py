@@ -42,6 +42,12 @@ async def home(request: Request):
     return API_METADATA
 
 
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
+
 # Filter Function
 def filter_colleges(field, region, region_list):
     response = []
